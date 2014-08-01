@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5064587A1956464F00A82949 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506458791956464F00A82949 /* Foundation.framework */; };
+		5064587C1956464F00A82949 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5064587B1956464F00A82949 /* CoreGraphics.framework */; };
+		5064587E1956464F00A82949 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5064587D1956464F00A82949 /* UIKit.framework */; };
+		506458841956464F00A82949 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 506458821956464F00A82949 /* InfoPlist.strings */; };
+		506458861956464F00A82949 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 506458851956464F00A82949 /* main.m */; };
+		5064588A1956464F00A82949 /* BNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 506458891956464F00A82949 /* BNRAppDelegate.m */; };
+		5064588C1956464F00A82949 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5064588B1956464F00A82949 /* Images.xcassets */; };
+		506458931956464F00A82949 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506458921956464F00A82949 /* XCTest.framework */; };
+		506458941956464F00A82949 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506458791956464F00A82949 /* Foundation.framework */; };
+		506458951956464F00A82949 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5064587D1956464F00A82949 /* UIKit.framework */; };
+		5064589D1956464F00A82949 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5064589B1956464F00A82949 /* InfoPlist.strings */; };
+		5064589F1956464F00A82949 /* BNR_iOS_HomepwnrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064589E1956464F00A82949 /* BNR_iOS_HomepwnrTests.m */; };
+		506458AA195646DE00A82949 /* BNRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506458A9195646DE00A82949 /* BNRItemsViewController.m */; };
+		506458AD195648EE00A82949 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 506458AC195648EE00A82949 /* BNRItem.m */; };
+		506458B019564AAA00A82949 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 506458AF19564AAA00A82949 /* BNRItemStore.m */; };
+		506458B21957C67200A82949 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 506458B11957C67200A82949 /* HeaderView.xib */; };
+		506458B81966547B00A82949 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506458B61966547B00A82949 /* BNRDetailViewController.m */; };
+		506458B91966547B00A82949 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 506458B71966547B00A82949 /* BNRDetailViewController.xib */; };
+		506458BC196CD94700A82949 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 506458BB196CD94700A82949 /* BNRImageStore.m */; };
+		506459411970CD2800A82949 /* BNROverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 506459401970CD2800A82949 /* BNROverlayView.m */; };
+		5064594419720AE200A82949 /* BNRChangeDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064594319720AE200A82949 /* BNRChangeDateViewController.m */; };
+		5064594619720D5500A82949 /* BNRChangeDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5064594519720D5500A82949 /* BNRChangeDateViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		506458961956464F00A82949 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5064586E1956464F00A82949 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 506458751956464F00A82949;
+			remoteInfo = "BNR-iOS-Homepwnr";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		506458761956464F00A82949 /* BNR-iOS-Homepwnr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BNR-iOS-Homepwnr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		506458791956464F00A82949 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5064587B1956464F00A82949 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5064587D1956464F00A82949 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		506458811956464F00A82949 /* BNR-iOS-Homepwnr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BNR-iOS-Homepwnr-Info.plist"; sourceTree = "<group>"; };
+		506458831956464F00A82949 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		506458851956464F00A82949 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		506458871956464F00A82949 /* BNR-iOS-Homepwnr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BNR-iOS-Homepwnr-Prefix.pch"; sourceTree = "<group>"; };
+		506458881956464F00A82949 /* BNRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRAppDelegate.h; sourceTree = "<group>"; };
+		506458891956464F00A82949 /* BNRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRAppDelegate.m; sourceTree = "<group>"; };
+		5064588B1956464F00A82949 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		506458911956464F00A82949 /* BNR-iOS-HomepwnrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BNR-iOS-HomepwnrTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		506458921956464F00A82949 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5064589A1956464F00A82949 /* BNR-iOS-HomepwnrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BNR-iOS-HomepwnrTests-Info.plist"; sourceTree = "<group>"; };
+		5064589C1956464F00A82949 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5064589E1956464F00A82949 /* BNR_iOS_HomepwnrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNR_iOS_HomepwnrTests.m; sourceTree = "<group>"; };
+		506458A8195646DE00A82949 /* BNRItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemsViewController.h; sourceTree = "<group>"; };
+		506458A9195646DE00A82949 /* BNRItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemsViewController.m; sourceTree = "<group>"; };
+		506458AB195648EE00A82949 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		506458AC195648EE00A82949 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
+		506458AE19564AAA00A82949 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
+		506458AF19564AAA00A82949 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		506458B11957C67200A82949 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		506458B51966547B00A82949 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
+		506458B61966547B00A82949 /* BNRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
+		506458B71966547B00A82949 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
+		506458BA196CD94700A82949 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
+		506458BB196CD94700A82949 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
+		5064593F1970CD2800A82949 /* BNROverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNROverlayView.h; sourceTree = "<group>"; };
+		506459401970CD2800A82949 /* BNROverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNROverlayView.m; sourceTree = "<group>"; };
+		5064594219720AE200A82949 /* BNRChangeDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRChangeDateViewController.h; sourceTree = "<group>"; };
+		5064594319720AE200A82949 /* BNRChangeDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRChangeDateViewController.m; sourceTree = "<group>"; };
+		5064594519720D5500A82949 /* BNRChangeDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRChangeDateViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		506458731956464F00A82949 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5064587C1956464F00A82949 /* CoreGraphics.framework in Frameworks */,
+				5064587E1956464F00A82949 /* UIKit.framework in Frameworks */,
+				5064587A1956464F00A82949 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5064588E1956464F00A82949 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506458931956464F00A82949 /* XCTest.framework in Frameworks */,
+				506458951956464F00A82949 /* UIKit.framework in Frameworks */,
+				506458941956464F00A82949 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5064586D1956464F00A82949 = {
+			isa = PBXGroup;
+			children = (
+				5064587F1956464F00A82949 /* BNR-iOS-Homepwnr */,
+				506458981956464F00A82949 /* BNR-iOS-HomepwnrTests */,
+				506458781956464F00A82949 /* Frameworks */,
+				506458771956464F00A82949 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		506458771956464F00A82949 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				506458761956464F00A82949 /* BNR-iOS-Homepwnr.app */,
+				506458911956464F00A82949 /* BNR-iOS-HomepwnrTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		506458781956464F00A82949 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				506458791956464F00A82949 /* Foundation.framework */,
+				5064587B1956464F00A82949 /* CoreGraphics.framework */,
+				5064587D1956464F00A82949 /* UIKit.framework */,
+				506458921956464F00A82949 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5064587F1956464F00A82949 /* BNR-iOS-Homepwnr */ = {
+			isa = PBXGroup;
+			children = (
+				506458AB195648EE00A82949 /* BNRItem.h */,
+				506458AC195648EE00A82949 /* BNRItem.m */,
+				506458AE19564AAA00A82949 /* BNRItemStore.h */,
+				506458AF19564AAA00A82949 /* BNRItemStore.m */,
+				506458BA196CD94700A82949 /* BNRImageStore.h */,
+				506458BB196CD94700A82949 /* BNRImageStore.m */,
+				506458881956464F00A82949 /* BNRAppDelegate.h */,
+				506458891956464F00A82949 /* BNRAppDelegate.m */,
+				5064593F1970CD2800A82949 /* BNROverlayView.h */,
+				506459401970CD2800A82949 /* BNROverlayView.m */,
+				506458B51966547B00A82949 /* BNRDetailViewController.h */,
+				506458B61966547B00A82949 /* BNRDetailViewController.m */,
+				506458B71966547B00A82949 /* BNRDetailViewController.xib */,
+				506458A8195646DE00A82949 /* BNRItemsViewController.h */,
+				506458A9195646DE00A82949 /* BNRItemsViewController.m */,
+				5064594219720AE200A82949 /* BNRChangeDateViewController.h */,
+				5064594319720AE200A82949 /* BNRChangeDateViewController.m */,
+				5064594519720D5500A82949 /* BNRChangeDateViewController.xib */,
+				506458B11957C67200A82949 /* HeaderView.xib */,
+				5064588B1956464F00A82949 /* Images.xcassets */,
+				506458801956464F00A82949 /* Supporting Files */,
+			);
+			path = "BNR-iOS-Homepwnr";
+			sourceTree = "<group>";
+		};
+		506458801956464F00A82949 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				506458811956464F00A82949 /* BNR-iOS-Homepwnr-Info.plist */,
+				506458821956464F00A82949 /* InfoPlist.strings */,
+				506458851956464F00A82949 /* main.m */,
+				506458871956464F00A82949 /* BNR-iOS-Homepwnr-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		506458981956464F00A82949 /* BNR-iOS-HomepwnrTests */ = {
+			isa = PBXGroup;
+			children = (
+				5064589E1956464F00A82949 /* BNR_iOS_HomepwnrTests.m */,
+				506458991956464F00A82949 /* Supporting Files */,
+			);
+			path = "BNR-iOS-HomepwnrTests";
+			sourceTree = "<group>";
+		};
+		506458991956464F00A82949 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5064589A1956464F00A82949 /* BNR-iOS-HomepwnrTests-Info.plist */,
+				5064589B1956464F00A82949 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		506458751956464F00A82949 /* BNR-iOS-Homepwnr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506458A21956464F00A82949 /* Build configuration list for PBXNativeTarget "BNR-iOS-Homepwnr" */;
+			buildPhases = (
+				506458721956464F00A82949 /* Sources */,
+				506458731956464F00A82949 /* Frameworks */,
+				506458741956464F00A82949 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BNR-iOS-Homepwnr";
+			productName = "BNR-iOS-Homepwnr";
+			productReference = 506458761956464F00A82949 /* BNR-iOS-Homepwnr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		506458901956464F00A82949 /* BNR-iOS-HomepwnrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 506458A51956464F00A82949 /* Build configuration list for PBXNativeTarget "BNR-iOS-HomepwnrTests" */;
+			buildPhases = (
+				5064588D1956464F00A82949 /* Sources */,
+				5064588E1956464F00A82949 /* Frameworks */,
+				5064588F1956464F00A82949 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				506458971956464F00A82949 /* PBXTargetDependency */,
+			);
+			name = "BNR-iOS-HomepwnrTests";
+			productName = "BNR-iOS-HomepwnrTests";
+			productReference = 506458911956464F00A82949 /* BNR-iOS-HomepwnrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5064586E1956464F00A82949 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BNR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Kelvin;
+				TargetAttributes = {
+					506458901956464F00A82949 = {
+						TestTargetID = 506458751956464F00A82949;
+					};
+				};
+			};
+			buildConfigurationList = 506458711956464F00A82949 /* Build configuration list for PBXProject "BNR-iOS-Homepwnr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5064586D1956464F00A82949;
+			productRefGroup = 506458771956464F00A82949 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				506458751956464F00A82949 /* BNR-iOS-Homepwnr */,
+				506458901956464F00A82949 /* BNR-iOS-HomepwnrTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		506458741956464F00A82949 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506458B91966547B00A82949 /* BNRDetailViewController.xib in Resources */,
+				506458B21957C67200A82949 /* HeaderView.xib in Resources */,
+				506458841956464F00A82949 /* InfoPlist.strings in Resources */,
+				5064594619720D5500A82949 /* BNRChangeDateViewController.xib in Resources */,
+				5064588C1956464F00A82949 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5064588F1956464F00A82949 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5064589D1956464F00A82949 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		506458721956464F00A82949 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506458B81966547B00A82949 /* BNRDetailViewController.m in Sources */,
+				506458B019564AAA00A82949 /* BNRItemStore.m in Sources */,
+				506459411970CD2800A82949 /* BNROverlayView.m in Sources */,
+				506458BC196CD94700A82949 /* BNRImageStore.m in Sources */,
+				506458AA195646DE00A82949 /* BNRItemsViewController.m in Sources */,
+				506458AD195648EE00A82949 /* BNRItem.m in Sources */,
+				506458861956464F00A82949 /* main.m in Sources */,
+				5064588A1956464F00A82949 /* BNRAppDelegate.m in Sources */,
+				5064594419720AE200A82949 /* BNRChangeDateViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5064588D1956464F00A82949 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5064589F1956464F00A82949 /* BNR_iOS_HomepwnrTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		506458971956464F00A82949 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 506458751956464F00A82949 /* BNR-iOS-Homepwnr */;
+			targetProxy = 506458961956464F00A82949 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		506458821956464F00A82949 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				506458831956464F00A82949 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5064589B1956464F00A82949 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5064589C1956464F00A82949 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		506458A01956464F00A82949 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		506458A11956464F00A82949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		506458A31956464F00A82949 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BNR-iOS-Homepwnr/BNR-iOS-Homepwnr-Prefix.pch";
+				INFOPLIST_FILE = "BNR-iOS-Homepwnr/BNR-iOS-Homepwnr-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		506458A41956464F00A82949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BNR-iOS-Homepwnr/BNR-iOS-Homepwnr-Prefix.pch";
+				INFOPLIST_FILE = "BNR-iOS-Homepwnr/BNR-iOS-Homepwnr-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		506458A61956464F00A82949 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BNR-iOS-Homepwnr.app/BNR-iOS-Homepwnr";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BNR-iOS-Homepwnr/BNR-iOS-Homepwnr-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BNR-iOS-HomepwnrTests/BNR-iOS-HomepwnrTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		506458A71956464F00A82949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BNR-iOS-Homepwnr.app/BNR-iOS-Homepwnr";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BNR-iOS-Homepwnr/BNR-iOS-Homepwnr-Prefix.pch";
+				INFOPLIST_FILE = "BNR-iOS-HomepwnrTests/BNR-iOS-HomepwnrTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		506458711956464F00A82949 /* Build configuration list for PBXProject "BNR-iOS-Homepwnr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506458A01956464F00A82949 /* Debug */,
+				506458A11956464F00A82949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506458A21956464F00A82949 /* Build configuration list for PBXNativeTarget "BNR-iOS-Homepwnr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506458A31956464F00A82949 /* Debug */,
+				506458A41956464F00A82949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		506458A51956464F00A82949 /* Build configuration list for PBXNativeTarget "BNR-iOS-HomepwnrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				506458A61956464F00A82949 /* Debug */,
+				506458A71956464F00A82949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5064586E1956464F00A82949 /* Project object */;
+}
