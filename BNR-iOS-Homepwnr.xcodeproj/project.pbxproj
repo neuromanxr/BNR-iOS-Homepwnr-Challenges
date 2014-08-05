@@ -29,6 +29,7 @@
 		506459411970CD2800A82949 /* BNROverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 506459401970CD2800A82949 /* BNROverlayView.m */; };
 		5064594419720AE200A82949 /* BNRChangeDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5064594319720AE200A82949 /* BNRChangeDateViewController.m */; };
 		5064594619720D5500A82949 /* BNRChangeDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5064594519720D5500A82949 /* BNRChangeDateViewController.xib */; };
+		50D75320198C7CAF000F0A3B /* BNRPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D7531F198C7CAF000F0A3B /* BNRPopoverBackgroundView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		5064594219720AE200A82949 /* BNRChangeDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRChangeDateViewController.h; sourceTree = "<group>"; };
 		5064594319720AE200A82949 /* BNRChangeDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRChangeDateViewController.m; sourceTree = "<group>"; };
 		5064594519720D5500A82949 /* BNRChangeDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRChangeDateViewController.xib; sourceTree = "<group>"; };
+		50D7531E198C7CAF000F0A3B /* BNRPopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRPopoverBackgroundView.h; sourceTree = "<group>"; };
+		50D7531F198C7CAF000F0A3B /* BNRPopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPopoverBackgroundView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				506458B51966547B00A82949 /* BNRDetailViewController.h */,
 				506458B61966547B00A82949 /* BNRDetailViewController.m */,
 				506458B71966547B00A82949 /* BNRDetailViewController.xib */,
+				50D7531E198C7CAF000F0A3B /* BNRPopoverBackgroundView.h */,
+				50D7531F198C7CAF000F0A3B /* BNRPopoverBackgroundView.m */,
 				506458A8195646DE00A82949 /* BNRItemsViewController.h */,
 				506458A9195646DE00A82949 /* BNRItemsViewController.m */,
 				5064594219720AE200A82949 /* BNRChangeDateViewController.h */,
@@ -288,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				506458B81966547B00A82949 /* BNRDetailViewController.m in Sources */,
+				50D75320198C7CAF000F0A3B /* BNRPopoverBackgroundView.m in Sources */,
 				506458B019564AAA00A82949 /* BNRItemStore.m in Sources */,
 				506459411970CD2800A82949 /* BNROverlayView.m in Sources */,
 				506458BC196CD94700A82949 /* BNRImageStore.m in Sources */,

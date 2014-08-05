@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Kelvin. All rights reserved.
 //
 
+#import "BNRPopoverBackgroundView.h"
 #import "BNRChangeDateViewController.h"
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
@@ -115,6 +116,10 @@
         self.imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
         
         self.imagePickerPopover.delegate = self;
+        
+        // gold challenge ch17
+        // subclass for custom popover view
+        self.imagePickerPopover.popoverBackgroundViewClass = [BNRPopoverBackgroundView class];
         
         // display the popover controller
         // is the camera bar button item
