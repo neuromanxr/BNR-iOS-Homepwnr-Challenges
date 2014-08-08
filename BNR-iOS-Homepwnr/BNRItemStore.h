@@ -16,6 +16,8 @@
 
 @property (nonatomic, readonly) NSArray *allItems;
 
+- (BOOL)saveChanges;
+
 // class method
 + (instancetype)sharedStore;
 - (BNRItem *)createItem;
