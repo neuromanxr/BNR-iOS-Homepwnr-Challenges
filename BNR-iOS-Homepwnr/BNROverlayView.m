@@ -18,6 +18,7 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor clearColor];
+        self.userInteractionEnabled = NO;
         self.opaque = NO;
     }
     return self;
@@ -39,10 +40,10 @@
     
     UIBezierPath *path = [[UIBezierPath alloc] init];
     
-    [path moveToPoint:CGPointMake(center.x, (center.y / 5))];
+    [path moveToPoint:CGPointMake(center.x, center.y)];
     [path addLineToPoint:CGPointMake((center.x / 2), center.y)];
-    [path addLineToPoint:CGPointMake((center.x * 1.5), center.y)];
-    [path addLineToPoint:CGPointMake(center.x, (center.y / 5))];
+//    [path addLineToPoint:CGPointMake((center.x * 1.5), center.y)];
+//    [path addLineToPoint:CGPointMake(center.x, (center.y / 5))];
     path.lineWidth = 2;
     [[UIColor redColor] setStroke];
     [path stroke];
