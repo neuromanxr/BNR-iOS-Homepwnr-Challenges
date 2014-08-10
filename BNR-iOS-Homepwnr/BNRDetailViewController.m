@@ -25,9 +25,27 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+
 @end
 
 @implementation BNRDetailViewController
+
+- (void)updateFonts
+{
+    UIFont *font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    
+    self.nameLabel.font = font;
+    self.serialNumberLabel.font = font;
+    self.valueLabel.font = font;
+    self.dateLabel.font = font;
+    
+    self.nameField.font = font;
+    self.serialNumberField.font = font;
+    self.valueField.font = font;
+}
 
 - (IBAction)backgroundTapped:(id)sender
 {
@@ -45,8 +63,17 @@
             UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
             self.navigationItem.leftBarButtonItem = cancelItem;
         }
+        
+        NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+        [defaultCenter addObserver:self selector:@selector(updateFonts) name:UIContentSizeCategoryDidChangeNotification object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter removeObserver:self];
 }
 
 - (void)save:(id)sender
@@ -252,6 +279,9 @@
     
     // use that image to put on the screen in the imageView
     self.imageView.image = imageToDisplay;
+    
+    // update the fonts
+    [self updateFonts];
 }
 
 - (void)viewDidLoad

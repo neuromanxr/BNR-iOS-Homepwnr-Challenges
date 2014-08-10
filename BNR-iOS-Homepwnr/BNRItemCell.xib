@@ -23,18 +23,12 @@
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id7-7X-gY4">
                         <rect key="frame" x="50" y="1" width="210" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="fpz-ZM-zUB"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-1u-9Ge">
-                        <rect key="frame" x="50" y="27" width="210" height="15"/>
+                        <rect key="frame" x="50" y="25" width="210" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="KDr-Fq-ipe"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -43,7 +37,7 @@
                         <rect key="frame" x="2" y="3" width="40" height="40"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="3LY-J5-j0I"/>
+                            <constraint firstAttribute="width" constant="40" placeholder="YES" id="3LY-J5-j0I"/>
                             <constraint firstAttribute="height" constant="40" id="o9Q-FA-lHI"/>
                         </constraints>
                     </imageView>
@@ -77,6 +71,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imageViewHeightConstraint" destination="o9Q-FA-lHI" id="Z6G-fV-E6G"/>
                 <outlet property="nameLabel" destination="Id7-7X-gY4" id="x9R-IB-fsN"/>
                 <outlet property="serialNumberLabel" destination="hL2-1u-9Ge" id="iju-aj-b6m"/>
                 <outlet property="thumbnailView" destination="1kU-Bg-TkX" id="R0v-EI-K8B"/>
