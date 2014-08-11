@@ -182,6 +182,14 @@
     cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
     cell.thumbnailView.image = item.thumbnail;
     
+    // bronze challenge ch19
+    if (item.valueInDollars > 50) {
+        cell.valueLabel.textColor = [UIColor greenColor];
+    } else {
+        cell.valueLabel.textColor = [UIColor redColor];
+    }
+    // bronze challenge end
+    
     // break the strong reference cycle
     __weak BNRItemCell *weakCell = cell;
     
