@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) UIImageView *iv;
 
+@property (nonatomic, strong) UIScrollView *scrollView;
+
 @end

@@ -26,7 +26,7 @@
 - (void)loadView
 {
     // gold challenge ch19
-    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    self.scrollView = [[UIScrollView alloc] init];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
 //    imageView.contentMode = UIViewContentModeCenter;
@@ -34,13 +34,13 @@
     
     self.iv = imageView;
     
-    scrollView.contentSize = imageView.bounds.size;
-    scrollView.delegate = self;
-    scrollView.minimumZoomScale = 0.5;
-    scrollView.maximumZoomScale = 10.0;
-    [scrollView addSubview:self.iv];
+    self.scrollView.contentSize = imageView.bounds.size;
+    self.scrollView.delegate = self;
+    self.scrollView.minimumZoomScale = 0.5;
+    self.scrollView.maximumZoomScale = 10.0;
+    [self.scrollView addSubview:self.iv];
     
-    self.view = scrollView;
+    self.view = self.scrollView;
     
     // gold challenge ch19 end
 }
@@ -54,8 +54,8 @@
 //    UIImageView *imageView = (UIImageView *)self.view;
 //    imageView.image = self.image;
     
-    UIScrollView *scrollView = (UIScrollView *)self.view;
-    scrollView.contentOffset = CGPointMake(self.iv.bounds.size.width / 2 - scrollView.bounds.size.width / 2, self.iv.bounds.size.height / 2 - scrollView.bounds.size.height / 2);
+    self.scrollView = (UIScrollView *)self.view;
+    self.scrollView.contentOffset = CGPointMake(self.iv.bounds.size.width / 2 - self.scrollView.bounds.size.width / 2, self.iv.bounds.size.height / 2 - self.scrollView.bounds.size.height / 2);
 }
 
 // gold challenge ch19
@@ -79,10 +79,35 @@
 }
 // gold challenge ch19 end
 
+// double tap to zoom
+- (void)scrollViewDoubleTapped:(UITapGestureRecognizer *)recognizer
+{
+    CGPoint pointInView = [recognizer locationInView:self.iv];
+    
+    CGFloat newZoomScale = self.scrollView.zoomScale * 1.5f;
+    newZoomScale = MIN(newZoomScale, self.scrollView.maximumZoomScale);
+    
+    CGSize scrollViewSize = self.scrollView.bounds.size;
+    
+    CGFloat w = scrollViewSize.width / newZoomScale;
+    CGFloat h = scrollViewSize.height / newZoomScale;
+    CGFloat x = pointInView.x - (w / 2.0f);
+    CGFloat y = pointInView.y - (h / 2.0f);
+    
+    CGRect rectToZoomTo = CGRectMake(x, y, w, h);
+    
+    [self.scrollView zoomToRect:rectToZoomTo animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewDoubleTapped:)];
+    doubleTapRecognizer.numberOfTapsRequired = 2;
+    doubleTapRecognizer.numberOfTouchesRequired = 1;
+    [self.scrollView addGestureRecognizer:doubleTapRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
