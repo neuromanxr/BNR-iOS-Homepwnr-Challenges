@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
+                <outlet property="assetTypeButton" destination="FNJ-fC-Q1Z" id="r0W-Zd-fvt"/>
                 <outlet property="cameraButton" destination="1iw-2k-2z9" id="kf7-7s-qAU"/>
                 <outlet property="dateLabel" destination="QfS-8z-ybu" id="A2o-fG-bqo"/>
                 <outlet property="nameField" destination="Fjy-sZ-RGV" id="BDD-XP-8Um"/>
@@ -84,10 +85,14 @@
                                 <action selector="takePicture:" destination="-1" id="SLy-DE-dZs"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="215" style="plain" systemItem="fixedSpace" id="u6q-yH-kUR"/>
                         <barButtonItem title="Clear" id="C5X-JM-Yvw">
                             <connections>
                                 <action selector="clearPicture:" destination="-1" id="pb7-zJ-uj6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Type" id="FNJ-fC-Q1Z">
+                            <connections>
+                                <action selector="showAssetTypePicker:" destination="-1" id="wmu-UN-ODA"/>
                             </connections>
                         </barButtonItem>
                     </items>

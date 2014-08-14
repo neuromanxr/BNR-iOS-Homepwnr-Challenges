@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Kelvin. All rights reserved.
 //
 
+#import "BNRAssetTypeViewController.h"
 #import "BNRPopoverBackgroundView.h"
 #import "BNRChangeDateViewController.h"
 #import "BNRDetailViewController.h"
@@ -24,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *assetTypeButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
@@ -45,6 +47,16 @@
     self.nameField.font = font;
     self.serialNumberField.font = font;
     self.valueField.font = font;
+}
+
+- (IBAction)showAssetTypePicker:(id)sender
+{
+    [self.view endEditing:YES];
+    
+    BNRAssetTypeViewController *avc = [[BNRAssetTypeViewController alloc] init];
+    avc.item = self.item;
+    
+    [self.navigationController pushViewController:avc animated:YES];
 }
 
 - (IBAction)backgroundTapped:(id)sender
@@ -279,6 +291,13 @@
     
     // use that image to put on the screen in the imageView
     self.imageView.image = imageToDisplay;
+    
+    NSString *typeLabel = [self.item.assetType valueForKey:@"label"];
+    if (!typeLabel) {
+        typeLabel = @"None";
+    }
+    
+    self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", typeLabel];
     
     // update the fonts
     [self updateFonts];
