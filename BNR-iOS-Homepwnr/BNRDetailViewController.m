@@ -18,6 +18,7 @@
 @interface BNRDetailViewController () <UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) UIPopoverController *imagePickerPopover;
+@property (strong, nonatomic) UIPopoverController *assetPickerPopover;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
@@ -56,7 +57,23 @@
     BNRAssetTypeViewController *avc = [[BNRAssetTypeViewController alloc] init];
     avc.item = self.item;
     
-    [self.navigationController pushViewController:avc animated:YES];
+//    [self.navigationController pushViewController:avc animated:YES];
+    
+    // bronze challenge ch23
+    // place image picker on screen
+    // check for iPad device before instantiating the popover controller
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        // create a new popover controller that will display the imagePicker
+        self.assetPickerPopover = [[UIPopoverController alloc] initWithContentViewController:avc];
+        
+        self.assetPickerPopover.delegate = self;
+        
+        // display the popover controller
+        [self.assetPickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    } else {
+        [self presentViewController:avc animated:YES completion:nil];
+    }
+    // bronze challenge ch23 end
 }
 
 - (IBAction)backgroundTapped:(id)sender
