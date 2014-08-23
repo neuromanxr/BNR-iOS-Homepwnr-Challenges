@@ -60,7 +60,7 @@
 //    [self.navigationController pushViewController:avc animated:YES];
     
     // bronze challenge ch23
-    // place image picker on screen
+    // place asset picker on screen
     // check for iPad device before instantiating the popover controller
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         // create a new popover controller that will display the imagePicker
@@ -244,6 +244,14 @@
 {
     NSLog(@"User dismissed popover");
     self.imagePickerPopover = nil;
+    
+    // update the assetTypeButton title when the popover is dismissed
+    NSString *typeLabel = [self.item.assetType valueForKey:@"label"];
+    if (!typeLabel) {
+        typeLabel = @"None";
+    }
+    
+    self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", typeLabel];
 }
 
 - (void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation

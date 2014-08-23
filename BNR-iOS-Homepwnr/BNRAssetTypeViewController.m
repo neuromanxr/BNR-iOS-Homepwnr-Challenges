@@ -9,6 +9,7 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 #import "BNRAssetTypeViewController.h"
+#import "BNRDetailViewController.h"
 
 @implementation BNRAssetTypeViewController
 
