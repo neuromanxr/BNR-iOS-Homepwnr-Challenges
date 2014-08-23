@@ -68,6 +68,8 @@
     self.item.assetType = assetType;
     
     [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.delegate didTap];
 }
 
 // uncheck cell that was deselected

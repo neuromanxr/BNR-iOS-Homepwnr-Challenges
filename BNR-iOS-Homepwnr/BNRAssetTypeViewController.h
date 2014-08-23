@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol DismissDelegate <NSObject>
+
+- (void)didTap;
+
+@end
+
 @class BNRItem;
 
 @interface BNRAssetTypeViewController : UITableViewController
+
+@property (nonatomic, assign) id <DismissDelegate> delegate;
 
 @property (nonatomic, strong) BNRItem *item;
 

@@ -15,7 +15,7 @@
 #import "BNRImageStore.h"
 #import "BNROverlayView.h"
 
-@interface BNRDetailViewController () <UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>
+@interface BNRDetailViewController () <UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate, DismissDelegate>
 
 @property (strong, nonatomic) UIPopoverController *imagePickerPopover;
 @property (strong, nonatomic) UIPopoverController *assetPickerPopover;
@@ -35,6 +35,19 @@
 @end
 
 @implementation BNRDetailViewController
+
+- (void)didTap
+{
+    [self.assetPickerPopover dismissPopoverAnimated:YES];
+    
+    // update the assetTypeButton title when the popover is dismissed
+    NSString *typeLabel = [self.item.assetType valueForKey:@"label"];
+    if (!typeLabel) {
+        typeLabel = @"None";
+    }
+    
+    self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", typeLabel];
+}
 
 - (void)updateFonts
 {
@@ -56,6 +69,8 @@
     
     BNRAssetTypeViewController *avc = [[BNRAssetTypeViewController alloc] init];
     avc.item = self.item;
+    
+    avc.delegate = self;
     
 //    [self.navigationController pushViewController:avc animated:YES];
     
@@ -244,14 +259,6 @@
 {
     NSLog(@"User dismissed popover");
     self.imagePickerPopover = nil;
-    
-    // update the assetTypeButton title when the popover is dismissed
-    NSString *typeLabel = [self.item.assetType valueForKey:@"label"];
-    if (!typeLabel) {
-        typeLabel = @"None";
-    }
-    
-    self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", typeLabel];
 }
 
 - (void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation
