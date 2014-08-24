@@ -16,7 +16,7 @@
 
 @class BNRItem;
 
-@interface BNRAssetTypeViewController : UITableViewController
+@interface BNRAssetTypeViewController : UITableViewController <UIAlertViewDelegate>
 
 @property (nonatomic, assign) id <DismissDelegate> delegate;
 

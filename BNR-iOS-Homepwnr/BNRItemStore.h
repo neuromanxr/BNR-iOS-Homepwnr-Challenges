@@ -20,6 +20,8 @@
 
 // class method
 + (instancetype)sharedStore;
+
+- (void)createAssetType:(NSString *)at;
 - (BNRItem *)createItem;
 - (void)removeItem:(BNRItem *)item;
 - (void)moveItemAtIndex:(NSUInteger)fromIndex

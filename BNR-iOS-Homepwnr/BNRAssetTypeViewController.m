@@ -13,9 +13,46 @@
 
 @implementation BNRAssetTypeViewController
 
+// ch23 silver challenge - add a new asset type
+- (void)addNewAssetType
+{
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"New Asset Type" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
+    [av setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [av show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        return;
+    }
+    
+    NSString *at = [[alertView textFieldAtIndex:0] text];
+    
+    [[BNRItemStore sharedStore] createAssetType:at];
+    
+    [[self tableView] reloadData];
+}
+// ch23 silver challenge end
+
 - (instancetype)init
 {
-    return [super initWithStyle:UITableViewStylePlain];
+    self = [super initWithStyle:UITableViewStylePlain];
+    
+    if (self) {
+        UINavigationItem *assetTypes = [self navigationItem];
+        [assetTypes setTitle:@"Asset Type"];
+        
+        UIBarButtonItem *newType = [[UIBarButtonItem alloc]
+                                    initWithTitle:@"New"
+                                    style: UIBarButtonItemStylePlain
+                                    target:self
+                                    action:@selector(addNewAssetType)];
+        
+        [[self navigationItem] setRightBarButtonItem:newType];
+    }
+    
+    return self;
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style

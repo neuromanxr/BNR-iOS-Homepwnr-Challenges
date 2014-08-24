@@ -61,6 +61,17 @@
     return _allAssetTypes;
 }
 
+// ch23 silver challenge - add a new asset type
+- (void)createAssetType:(NSString *)at
+{
+    NSManagedObject *type;
+    
+    type = [NSEntityDescription insertNewObjectForEntityForName:@"BNRAssetType" inManagedObjectContext:self.context];
+    
+    [type setValue:at forKey:@"label"];
+    [_allAssetTypes addObject:type];
+}
+
 + (instancetype)sharedStore
 {
     static BNRItemStore *sharedStore = nil;

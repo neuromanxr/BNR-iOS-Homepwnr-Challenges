@@ -115,8 +115,12 @@
     // place asset picker on screen
     // check for iPad device before instantiating the popover controller
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        // create a new popover controller that will display the imagePicker
-        self.assetPickerPopover = [[UIPopoverController alloc] initWithContentViewController:avc];
+        
+        // create a navigation controller with asset type view controller
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:avc];
+        
+        // create a new popover controller that will display the navigation controller
+        self.assetPickerPopover = [[UIPopoverController alloc] initWithContentViewController:nc];
         
         self.assetPickerPopover.delegate = self;
         
