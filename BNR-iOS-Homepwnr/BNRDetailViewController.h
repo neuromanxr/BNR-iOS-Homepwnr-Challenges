@@ -12,7 +12,7 @@
 // passing this data from BNRItemsViewController to BNRDetailViewController
 @class BNRItem;
 
-@interface BNRDetailViewController : UIViewController
+@interface BNRDetailViewController : UIViewController <UIViewControllerRestoration>
 
 // check whether instance is being used to create a new BNRItem or show existing
 - (instancetype)initForNewItem:(BOOL)isNew;

@@ -14,7 +14,7 @@
 #import "BNRItem.h"
 #import "BNRItemCell.h"
 
-@interface BNRItemsViewController () <UITableViewDelegate, UIPopoverControllerDelegate>
+@interface BNRItemsViewController () <UITableViewDelegate, UIPopoverControllerDelegate, UIDataSourceModelAssociation>
 
 // private property, strong because it will be a top level object in XIB
 // use weak references for objects that are owned by top level objects
@@ -39,6 +39,57 @@
 //    }
 //    return _headerView;
 //}
+
+- (NSString *)modelIdentifierForElementAtIndexPath:(NSIndexPath *)path inView:(UIView *)view
+{
+    NSString *identifier = nil;
+    
+    if (path && view) {
+        // return an identifier of the given NSIndexPath, in case next time the data source changes
+        BNRItem *item = [[BNRItemStore sharedStore] allItems][path.row];
+        identifier = item.itemKey;
+    }
+    return identifier;
+}
+
+- (NSIndexPath *)indexPathForElementWithModelIdentifier:(NSString *)identifier inView:(UIView *)view
+{
+    NSIndexPath *indexPath = nil;
+    
+    if (identifier && view) {
+        NSArray *items = [[BNRItemStore sharedStore] allItems];
+        
+        for (BNRItem *item in items) {
+            if ([identifier isEqualToString:item.itemKey]) {
+                NSUInteger row = [items indexOfObjectIdenticalTo:item];
+                
+                indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+                break;
+            }
+        }
+    }
+    return indexPath;
+}
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [coder encodeBool:self.isEditing forKey:@"TableViewIsEditing"];
+    
+    [super encodeRestorableStateWithCoder:coder];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    self.editing = [coder decodeBoolForKey:@"TableViewIsEditing"];
+    
+    [super decodeRestorableStateWithCoder:coder];
+}
+
+
++ (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)path coder:(NSCoder *)coder
+{
+    return [[self alloc] init];
+}
 
 // BNRItemsViewController knows when a row is tapped because it is the table view's delegate
 // when row is tapped in table view, its delegate is sent this method
@@ -72,6 +123,8 @@
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
     navController.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    navController.restorationIdentifier = NSStringFromClass([navController class]);
     
     [self presentViewController:navController animated:YES completion:nil];
 }
@@ -132,6 +185,9 @@
     if (self) {
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"Homepwner";
+        
+        self.restorationIdentifier = NSStringFromClass([self class]);
+        self.restorationClass = [self class];
     
         // create a bar button item that will send addNewItem to BNRItemsViewController
         UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
@@ -261,6 +317,8 @@
     
     // register this NIB, which contains the cell
     [self.tableView registerNib:nib forCellReuseIdentifier:@"BNRItemCell"];
+    
+    self.tableView.restorationIdentifier = @"BNRItemsViewControllerTableView";
     
     self.tableView.delegate = self;
     

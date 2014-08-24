@@ -12,27 +12,64 @@
 
 @implementation BNRAppDelegate
 
+- (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    // create a new navigation controller
+    UIViewController *vc = [[UINavigationController alloc] init];
+    
+    // the last object in the path array is the restoration identifier for this view controller
+    vc.restorationIdentifier = [identifierComponents lastObject];
+    
+    // if there is only 1 identifier component, then this is the root view controller
+    if ([identifierComponents count] == 1) {
+        self.window.rootViewController = vc;
+    }
+    return vc;
+}
+
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
-    // create a BNRItemsViewController
-    BNRItemsViewController *itemsViewController = [[BNRItemsViewController alloc] init];
+    if (!self.window.rootViewController) {
     
-    // create an instance of UINavigationController
-    // its stack contains only itemsViewController
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
-    
-    // place navigation controller's view in the window hierarchy
-    self.window.rootViewController = navController;
+        // create a BNRItemsViewController
+        BNRItemsViewController *itemsViewController = [[BNRItemsViewController alloc] init];
+        
+        // create an instance of UINavigationController
+        // its stack contains only itemsViewController
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
+        
+        // give the navigation controller a restoration identifier that is the same name as the class
+        navController.restorationIdentifier = NSStringFromClass([navController class]);
+        
+        // place navigation controller's view in the window hierarchy
+        self.window.rootViewController = navController;
+        
+    }
     
     // place BNRItemsViewController's table view in the window hierarchy
 //    self.window.rootViewController = itemsViewController;
     
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
     return YES;
 }
 
