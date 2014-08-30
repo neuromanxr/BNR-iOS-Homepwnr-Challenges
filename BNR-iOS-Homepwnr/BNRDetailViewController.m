@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Kelvin. All rights reserved.
 //
 
+#import "BNRAppDelegate.h"
 #import "BNRAssetTypeViewController.h"
 #import "BNRPopoverBackgroundView.h"
 #import "BNRChangeDateViewController.h"
@@ -371,10 +372,10 @@
     
     NSString *typeLabel = [self.item.assetType valueForKey:@"label"];
     if (!typeLabel) {
-        typeLabel = @"None";
+        typeLabel = NSLocalizedString(@"None", @"Type label None");
     }
     
-    self.assetTypeButton.title = [NSString stringWithFormat:@"Type: %@", typeLabel];
+    self.assetTypeButton.title = [NSString stringWithFormat:NSLocalizedString(@"Type: %@", @"Asset type button"), typeLabel];
     
     // update the fonts
     [self updateFonts];
@@ -429,7 +430,18 @@
     BNRItem *item = self.item;
     item.itemName = self.nameField.text;
     item.serialNumber = self.serialNumberField.text;
-    item.valueInDollars = [self.valueField.text intValue];
+    
+    int newValue = [self.valueField.text intValue];
+    
+    // is it changed?
+    if (newValue != item.valueInDollars) {
+        // put it in the item
+        item.valueInDollars = newValue;
+        
+        // store it as the default value for the next item
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:newValue forKey:BNRNextItemValuePrefsKey];
+    }
 }
 
 // silver challenge ch10

@@ -184,7 +184,7 @@
     
     if (self) {
         UINavigationItem *navItem = self.navigationItem;
-        navItem.title = @"Homepwner";
+        navItem.title = NSLocalizedString(@"Homepwner", @"Name of application");
         
         self.restorationIdentifier = NSStringFromClass([self class]);
         self.restorationClass = [self class];

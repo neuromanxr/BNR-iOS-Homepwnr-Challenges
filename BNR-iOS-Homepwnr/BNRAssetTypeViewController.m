@@ -41,7 +41,8 @@
     
     if (self) {
         UINavigationItem *assetTypes = [self navigationItem];
-        [assetTypes setTitle:@"Asset Type"];
+
+        [assetTypes setTitle:NSLocalizedString(@"Asset Type", @"BNRAssetTypeViewController title")];
         
         UIBarButtonItem *newType = [[UIBarButtonItem alloc]
                                     initWithTitle:@"New"

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502DD01619B01E2A00BD944F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 502DD01819B01E2A00BD944F /* Localizable.strings */; };
+		502DD01B19B157AD00BD944F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 502DD01A19B157AD00BD944F /* Settings.bundle */; };
 		50453F57199AF061001BB6DF /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50453F55199AF061001BB6DF /* Homepwner.xcdatamodeld */; };
 		50453F5A199AF2A8001BB6DF /* BNRImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50453F59199AF2A8001BB6DF /* BNRImageTransformer.m */; };
 		50453F5D199B0571001BB6DF /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 50453F5C199B0571001BB6DF /* BNRItem.m */; };
@@ -49,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		502DD01719B01E2A00BD944F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		502DD01919B01E9800BD944F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		502DD01A19B157AD00BD944F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		50453F56199AF061001BB6DF /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
 		50453F58199AF2A8001BB6DF /* BNRImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageTransformer.h; sourceTree = "<group>"; };
 		50453F59199AF2A8001BB6DF /* BNRImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageTransformer.m; sourceTree = "<group>"; };
@@ -154,6 +159,8 @@
 		5064587F1956464F00A82949 /* BNR-iOS-Homepwnr */ = {
 			isa = PBXGroup;
 			children = (
+				502DD01819B01E2A00BD944F /* Localizable.strings */,
+				502DD01A19B157AD00BD944F /* Settings.bundle */,
 				50453F5B199B0571001BB6DF /* BNRItem.h */,
 				50453F5C199B0571001BB6DF /* BNRItem.m */,
 				506458AE19564AAA00A82949 /* BNRItemStore.h */,
@@ -297,9 +304,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502DD01B19B157AD00BD944F /* Settings.bundle in Resources */,
 				50B7C61819AEE52100A22756 /* BNRDetailViewController.xib in Resources */,
 				50D7532519945D1F000F0A3B /* BNRItemCell.xib in Resources */,
 				506458B21957C67200A82949 /* HeaderView.xib in Resources */,
+				502DD01619B01E2A00BD944F /* Localizable.strings in Resources */,
 				506458841956464F00A82949 /* InfoPlist.strings in Resources */,
 				5064594619720D5500A82949 /* BNRChangeDateViewController.xib in Resources */,
 				5064588C1956464F00A82949 /* Images.xcassets in Resources */,
@@ -358,6 +367,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		502DD01819B01E2A00BD944F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502DD01719B01E2A00BD944F /* es */,
+				502DD01919B01E9800BD944F /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		506458821956464F00A82949 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

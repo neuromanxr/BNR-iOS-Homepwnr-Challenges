@@ -10,7 +10,19 @@
 #import "BNRAppDelegate.h"
 #import "BNRItemsViewController.h"
 
+NSString * const BNRNextItemValuePrefsKey = @"NextItemValue";
+NSString * const BNRNextItemNamePrefsKey = @"NextItemName";
+
 @implementation BNRAppDelegate
+
++ (void)initialize
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *factorySettings = @{BNRNextItemValuePrefsKey: @75,
+                                      BNRNextItemNamePrefsKey: @"Coffee Cup"};
+    [defaults registerDefaults:factorySettings];
+}
 
 - (UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
 {
